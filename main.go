@@ -24,7 +24,7 @@ var (
 	outputColor   = color.New(color.FgRed).SprintFunc()
 	receivedColor = color.New(color.FgYellow).SprintFunc()
 	addr          = flag.String("addr", "localhost:8080", "http service address")
-	server        = flag.String("server", "local", "Server to connect to: 'local' or 'render'")
+	server        = flag.String("server", "default", "Server to connect to: 'local' or 'render'")
 )
 
 type Client struct {
