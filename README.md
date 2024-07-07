@@ -40,14 +40,14 @@ Para uilizar o servidor, veja [github.com/8january/terminal_chat_server_golang](
 
 -server: Especifica o servidor a ser conectado. As opções disponíveis são:
 
-default: Conectar ao servidor da flag -addr.
+default: Conectar ao servidor da flag -addr (localhost:8080 por padrão).
 
 render: Conectar ao servidor hospedado no Render.
 
 ### Exemplo de Uso
 - Para conectar a um endereço específico:
 ```bash
-go run main.go -addr url_especifica -server default
+go run main.go -addr url_especifica
 ```
 
 - Para conectar ao servidor local:
