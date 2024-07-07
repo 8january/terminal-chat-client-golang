@@ -283,7 +283,7 @@ func firstMessage(client *Client, user *User) {
 		Type:    "server_message",
 		Name:    user.Name,
 		Room:    user.Room,
-		Content: user.Name + "joined",
+		Content: "join",
 	}
 
 	jsonMessage, err := json.Marshal(message)
