@@ -250,6 +250,7 @@ func getUserInfo() *User {
 }
 
 func handleMessages(client *Client, ui *UI, user *User) {
+	firstMessage(client, user)
 	for {
 		select {
 		case msg := <-client.receive:
@@ -273,6 +274,24 @@ func handleMessages(client *Client, ui *UI, user *User) {
 			return
 		}
 	}
+
+}
+
+func firstMessage(client *Client, user *User) {
+	message := Message{
+		ID:      user.ID,
+		Type:    "server_message",
+		Name:    user.Name,
+		Room:    user.Room,
+		Content: user.Name + "joined",
+	}
+
+	jsonMessage, err := json.Marshal(message)
+	if err != nil {
+		log.Println("JSON marshalling error:", err)
+	}
+
+	client.send <- jsonMessage
 
 }
 
