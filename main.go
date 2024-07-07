@@ -24,7 +24,7 @@ var (
 	outputColor   = color.New(color.FgRed).SprintFunc()
 	receivedColor = color.New(color.FgYellow).SprintFunc()
 	addr          = flag.String("addr", "localhost:8080", "http service address")
-	server        = flag.String("server", "local", "Server to connect to: 'local' or 'remote'")
+	server        = flag.String("server", "local", "Server to connect to: 'local' or 'render'")
 )
 
 type Client struct {
@@ -69,7 +69,7 @@ func NewClient(addr string) (*Client, error) {
 
 	var uri url.URL
 	switch *server {
-	case "remote":
+	case "render":
 		uri = url.URL{Scheme: "wss", Host: "terminal-chat-server-golang.onrender.com", Path: "/ws"}
 	default:
 		uri = url.URL{Scheme: "ws", Host: addr, Path: "/"}
