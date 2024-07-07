@@ -33,6 +33,8 @@ cd terminal_chat_client_golang
 go run main.go
 ```
 
+Para uilizar o servidor, veja [github.com/8january/terminal_chat_server_golang](https://github.com/8january/terminal_chat_server_golang)
+
 ### Flags Disponíveis
 -addr: Especifica o endereço do servidor de chat. Por padrão, utiliza localhost:8080.
 
